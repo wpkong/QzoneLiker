@@ -8,7 +8,7 @@ from django.db import models
 
 class LikerConfig(models.Model):
     qq = models.CharField(max_length=128)
-    cookie = models.CharField(max_length=512)
+    cookie = models.CharField(max_length=1024)
 
 class AlreadyLiked(models.Model):
     mood_id = models.CharField(max_length=128)
