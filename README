@@ -1,0 +1,3 @@
+celery -A QzoneLiker beat -l debug --max-interval=10
+
+celery -A QzoneLiker worker -l debug
