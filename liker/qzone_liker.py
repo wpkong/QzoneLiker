@@ -75,9 +75,12 @@ class QzoneLiker(object):
         }
 
         for speak in self._get_speak_speak():
-            for like in AlreadyLiked.objects.all():
-                if like.mood_id == speak[1]:
-                    continue
+            try:
+                for like in AlreadyLiked.objects.all():
+                    if like.mood_id == speak[1]:
+                        raise RuntimeError
+            except RuntimeError as e:
+                continue
 
             post_data['unikey'] = speak[0]
             post_data['curkey'] = speak[1]
